@@ -153,7 +153,7 @@ nav a.active { color: white; border-bottom-color: #c8a84b; }
 <header>
   <div class="header-title">
     <h1>Wisconsin Election Maps</h1>
-    <div class="subtitle">2024 Projected Margins</div>
+    <div class="subtitle">2026 Projected Margins</div>
   </div>
   <nav><a href="index.html">Assembly</a><a href="senate.html" class="active">Senate</a><a href="ratings.html">Ratings</a></nav>
 </header>
@@ -167,7 +167,7 @@ nav a.active { color: white; border-bottom-color: #c8a84b; }
       <div class="legend-labels">
         <span class="d">D+60+</span><span>Even</span><span class="r">R+60+</span>
       </div>
-      <div class="legend-not-up"><span class="legend-not-up-swatch"></span><span>Not up in 2024</span></div>
+      <div class="legend-not-up"><span class="legend-not-up-swatch"></span><span>Not up in 2026</span></div>
     </div>
 
     <!-- Mobile bottom bar -->
@@ -292,7 +292,7 @@ function showDetail(props) {
   const c1 = (props.candidate1||'').trim();
   const c2 = (props.candidate2||'').trim();
   const notes = (props.notes||'').trim();
-  const marginLabel = props.projected||'Not up in 2024';
+  const marginLabel = props.projected||'Not up in 2026';
   document.getElementById('detail-content').innerHTML = `
     <div style="margin-bottom:8px;">
       <div class="detail-district-num ${pc}">District ${props.district}</div>
@@ -340,13 +340,13 @@ function renderList() {
     const color=marginColor(p.projected);
     const incumbent=(p.incumbent||'').trim().replace(/\s*\(.*\)\s*/g,'').trim();
     const isActive=selectedDistrict===p.district;
-    const marginLabel=p.projected||'Not up 2024';
+    const marginLabel=p.projected||'Not up 2026';
     const pc=proj.party||'N';
     return `<li class="${cls}${isActive?' active':''}" data-district="${p.district}">
       <span class="di-num">${p.district}</span>
       <span class="di-swatch" style="background:${color}"></span>
       <span class="di-info">
-        <div class="di-name">${incumbent||(p.projected?'Open Seat':'Not up 2024')}</div>
+        <div class="di-name">${incumbent||(p.projected?'Open Seat':'Not up 2026')}</div>
         <div class="di-margin ${pc}">${marginLabel}</div>
       </span></li>`;
   };
