@@ -24,7 +24,7 @@
     --shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
 
-  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+  body { font-family: 'Georgia', serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
 
   header {
     background: #0f1f3d;
@@ -73,7 +73,7 @@
     grid-template-columns: 1fr 340px;
     flex: 1;
     min-height: 0;
-    height: calc(100vh - 65px);
+    overflow: hidden;
   }
 
   .map-panel { position: relative; background: #dce8f0; overflow: hidden; }
@@ -99,7 +99,7 @@
   .legend-not-up { display: flex; align-items: center; gap: 6px; margin-top: 7px; }
   .legend-not-up-swatch { width: 14px; height: 14px; background: #c8c4bc; border-radius: 2px; flex-shrink: 0; }
 
-  .sidebar { background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+  .sidebar { background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; height: 100%; }
 
   .sidebar-header { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); background: #f9f8f6; }
   .sidebar-header h2 { font-size: 0.95rem; font-weight: 700; font-family: sans-serif; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
@@ -107,7 +107,7 @@
   .search-box { width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; font-family: sans-serif; background: white; color: var(--text); }
   .search-box:focus { outline: 2px solid #3b6fc4; border-color: transparent; }
 
-  .detail-panel { padding: 20px; border-bottom: 1px solid var(--border); display: none; max-height: 280px; overflow-y: auto; flex-shrink: 0; }
+  .detail-panel { padding: 20px; border-bottom: 1px solid var(--border); display: none; max-height: 260px; overflow-y: auto; flex-shrink: 0; }
   .detail-panel.visible { display: block; }
 
   .detail-district-num { font-size: 2.2rem; font-weight: 700; line-height: 1; font-family: sans-serif; margin-bottom: 2px; }
@@ -133,7 +133,7 @@
 
   .note-badge { display: inline-block; background: #fff3cd; border: 1px solid #ffc107; border-radius: 3px; padding: 2px 7px; font-size: 11px; font-family: sans-serif; margin-top: 6px; color: #7a5c00; }
 
-  .district-list-wrap { flex: 1; overflow-y: auto; }
+  .district-list-wrap { flex: 1; overflow-y: auto; min-height: 0; }
   .district-list { list-style: none; }
 
   .district-item { display: flex; align-items: center; gap: 10px; padding: 9px 20px; cursor: pointer; border-bottom: 1px solid #f3f3f3; font-family: sans-serif; font-size: 13px; transition: background 0.1s; }
